@@ -1,0 +1,25 @@
+# fly.toml app configuration file generated for idrx-redeem-indexer on 2025-10-22T14:22:04+07:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'idrx-redeem-indexer'
+primary_region = 'sin'
+
+[build]
+
+[http_service]
+  internal_port = 42069
+  force_https = true
+  auto_stop_machines = false
+  auto_start_machines = true
+  processes = ['app']
+  min_machines_running = 1
+
+[deploy]
+  strategy = "immediate"
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1

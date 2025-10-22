@@ -5,18 +5,19 @@
   "type": "module",
   "scripts": {
     "dev": "ponder dev",
-    "start": "ponder start",
+    "start": "ponder start --schema $FLY_IMAGE_REF",
     "db": "ponder db",
     "codegen": "ponder codegen",
     "lint": "eslint .",
     "typecheck": "tsc"
   },
   "dependencies": {
-    "ponder": "^0.14.3",
     "hono": "^4.5.0",
+    "ponder": "^0.14.3",
     "viem": "^2.21.3"
   },
   "devDependencies": {
+    "@flydotio/dockerfile": "^0.7.10",
     "@types/node": "^20.9.0",
     "eslint": "^8.53.0",
     "eslint-config-ponder": "^0.14.3",
